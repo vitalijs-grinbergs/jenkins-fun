@@ -1,1 +1,0 @@
-ping google.lv -c 4

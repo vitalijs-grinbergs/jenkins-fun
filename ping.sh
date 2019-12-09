@@ -1,0 +1,1 @@
+ping ss.com -c 5

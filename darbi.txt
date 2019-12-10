@@ -1,0 +1,10 @@
+	load emergn data    https://info.ur.gov.lv/api/lega...registration-number/40003275598
+	load emergn         https://info.ur.gov.lv/api/lega...tion-number/40003275598?lang=LV
+	Documents           https://info.ur.gov.lv/api/lega...api/000327559/documents?lang=LV
+
+
+
+    Kārlim dokumentu nodošana public document
+    Stakam par sadarbību
+    Valdim par dokumentu ģenerēšanu
+    

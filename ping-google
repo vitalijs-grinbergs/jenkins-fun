@@ -1,4 +1,2 @@
 ping google.lv -c 1
 ping zabbix.pielalites.lv -c 1
-
-ifconfig

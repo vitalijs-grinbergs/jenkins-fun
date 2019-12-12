@@ -1,0 +1,4 @@
+echo "Kārlim dokumentu nodošana public document"
+echo "Stakam par sadarbību"
+edho "Valdim par dokumentu ģenerēšanu"
+    

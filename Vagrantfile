@@ -1,5 +1,3 @@
-apt-get
-
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 

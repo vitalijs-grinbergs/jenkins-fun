@@ -71,9 +71,8 @@ Vagrant.configure("2") do |config|
      rm -rf jenkins-fun
      git clone https://github.com/vitalijs-grinbergs/jenkins-fun.git
      cd jenkins-fun
-     mv ping-google ping-google.sh
-     chmod +x ping-google.sh
-     sh ping-google.sh
+     chmod +x install-ansible.sh
+     sh install-ansible.sh
      cd ..
      rm -rf jenkins-fun
      echo 'Job is done !!!'

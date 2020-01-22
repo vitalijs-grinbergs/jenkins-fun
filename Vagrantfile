@@ -12,7 +12,7 @@ Vagrant.configure("2") do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://vagrantcloud.com/search.
-  config.vm.box = "ubuntu/xenial64"
+  config.vm.box = "generic/ubuntu1804"
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
@@ -51,7 +51,7 @@ Vagrant.configure("2") do |config|
   #
    config.vm.provider "virtualbox" do |vb|
   #   # Display the VirtualBox GUI when booting the machine
-     vb.gui = true
+  #   vb.gui = true
   #
   #   # Customize the amount of memory on the VM:
      vb.memory = "1024"
@@ -64,15 +64,35 @@ Vagrant.configure("2") do |config|
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
   # documentation for more information about their specific syntax and use.
    config.vm.provision "shell", inline: <<-SHELL
-     apt-get update
-     apt-get install -y git
-     rm -rf jenkins-fun
-     git clone https://github.com/vitalijs-grinbergs/jenkins-fun.git
-     cd jenkins-fun
-     chmod +x install-ansible.sh
-     sh install-ansible.sh
-     cd ..
-     rm -rf jenkins-fun
-     echo 'Job is done !!!'
+     #apt-get update
+     #apt-get install -y git
+     #rm -rf jenkins-fun
+     #git clone https://github.com/vitalijs-grinbergs/jenkins-fun.git
+     #cd jenkins-fun
+     #chmod +x install-ansible.sh
+     #sh install-ansible.sh
+     #cd ..
+     #rm -rf jenkins-fun
+     #echo 'Job is done !!!'
+     echo "deb http://ppa.launchpad.net/ansible/ansible/ubuntu bionic main" | sudo tee /etc/apt/sources.list.d/ansible.list
+     sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367
+     sudo apt-get update
+     sudo apt-get -y install gnupg2
+     sudo apt-get install -y ansible
+     sudo apt-get -y install docker.io
+     ln -sf /usr/bin/docker.io /usr/local/bin/docker
+     #sed -i '$acomplete -F _docker docker' /etc/bash_completion.d/docker.io
+     #docker pull ubuntu
+     #docker run -i -t ubuntu /bin/bash
+     sudo apt-get install -y nodejs npm
+     sudo npm install npm --global
+     sudo apt-get -y install python-pip git pwgen vim
+     sudo pip install requests==2.14.2
+
+
+     sudo ansible --version
+     sudo docker-compose version
    SHELL
 end
+
+# https://sxi.io/how-to-install-ansible-awx-on-ubuntu-18-04-debian-10

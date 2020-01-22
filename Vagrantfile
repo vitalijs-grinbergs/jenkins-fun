@@ -74,6 +74,5 @@ Vagrant.configure("2") do |config|
      cd ..
      rm -rf jenkins-fun
      echo 'Job is done !!!'
-     ls -lh
    SHELL
 end
